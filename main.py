@@ -25,7 +25,7 @@ def karatsuba(n1: str, n2: str) -> int:
     G = karatsuba(str(int(A) + int(B)), str(int(C) + int(D)))
     H = G - E - F
     
-    print(numero_de_algarismos - meio)
+    
     resultado = (10 ** (2 * (numero_de_algarismos - meio))) * E + (10 ** (numero_de_algarismos - meio)) * H + F
     
     
