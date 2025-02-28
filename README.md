@@ -96,3 +96,58 @@ python main.py
 ```
 
 ## Relatório Técnico:
+
+### Complexidade ciclomática:
+
+```
+
+       (N1) Inicio
+          │
+          ▼
+        (N2) numero_de_algarismos == 1?
+        ├──────────► (N3) Retorna x * y  [Sim]
+        │
+        ▼
+       (N4) karatsuba(A, C)
+        │
+        ▼
+       (N5) karatsuba(B, D)
+        │
+        ▼
+       (N6) karatsuba(A+B, C+D)
+        │
+        ▼
+      (N7) Retorna resultado final
+
+
+```
+
+Formula complexidade ciclomática : 𝑀 = 𝐸 − 𝑁 + 2𝑃
+
+M = Arestas - Nos + 2 \* Componentes(no caso 1)
+
+M = 7 - 6 + 2
+
+M = 3
+
+## Complexidade assintótica
+
+| Tipo de Complexidade      | Valor      |
+| ------------------------- | ---------- |
+| **Complexidade Temporal** | O(n^1.585) |
+| **Complexidade Espacial** | O(n)       |
+| **Melhor Caso**           | O(1)       |
+| **Caso Médio**            | O(n^1.585) |
+| **Pior Caso**             | O(n^1.585) |
+
+## Melhor caso:
+
+Número de algarismos == 1. O Algoritmo então não realiza a divisão dos números e apenas retorna o resultado da multiplicação dos dois números passados por parametro.
+
+### **Pior Caso** - \( O(n^{1.585}) \)
+
+No pior caso, o algoritmo realiza a divisão dos números de forma desbalanceada, levando a uma maior profundidade recursiva e um número elevado de multiplicações. Cada divisão gera subproblemas que exigem chamadas recursivas adicionais, com um crescimento não linear das operações, resultando em uma complexidade de \( O(n^{1.585}) \).
+
+### **Caso Médio** - \( O(n^{1.585}) \)
+
+No caso médio, o comportamento do algoritmo é similar ao pior caso, com as chamadas recursivas dividindo os números em subproblemas equilibrados. A complexidade continua sendo \( O(n^{1.585}) \), já que a quantidade de multiplicações e somas de subproblemas segue o mesmo padrão do pior caso, mas com uma distribuição menos desbalanceada.
