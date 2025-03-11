@@ -104,20 +104,47 @@ python main.py
        (N1) Inicio
           │
           ▼
-        (N2) numero_de_algarismos == 1?
-        ├──────────► (N3) Retorna x * y  [Sim]
+        (N2) Atribuição x, y
+          |
+          ▼
+        (N3) Atribuição numero_de_algarismos
+          |
+          ▼
+        (N4) numero_de_algarismos == 1?
+        ├──────────► (N5) Retorna x * y  [Sim]
         │
         ▼
-       (N4) karatsuba(A, C)
+        (N6) Atribuição x, y mantendo os dois numeros com a mesma quantidade de algarismos
         │
         ▼
-       (N5) karatsuba(B, D)
+        (N7) Atribuição de A (primeira metade do primeiro numero)
         │
         ▼
-       (N6) karatsuba(A+B, C+D)
+        (N8) Atribuição de B (segunda metade do primeiro numero)
         │
         ▼
-      (N7) Retorna resultado final
+        (N9) Atribuição de C (primeira metade do segundo numero)
+        │
+        ▼
+        (N10) AAtribuição de D (segunda metade do segundo numero)
+        │
+        ▼
+       (N11) karatsuba(A, C)
+        │
+        ▼
+       (N12) karatsuba(B, D)
+        │
+        ▼
+       (N13) karatsuba(A+B, C+D)
+        │
+        ▼
+        (N14) Atribuição de H encontrado após os resultados dos karatsubas
+        │
+        ▼
+        (N15) Atribuição do resultado
+        │
+        ▼
+      (N16) Retorna resultado final
 
 
 ```
@@ -126,7 +153,7 @@ Formula complexidade ciclomática : 𝑀 = 𝐸 − 𝑁 + 2𝑃
 
 M = Arestas - Nos + 2 \* Componentes(no caso 1)
 
-M = 7 - 6 + 2
+M = 15 - 14 + 2
 
 M = 3
 
